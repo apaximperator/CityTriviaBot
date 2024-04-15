@@ -4,7 +4,7 @@ from tqdm import tqdm
 import pickle
 import pandas as pd
 
-url = 'https://geogoroda.ru/bukva'
+url_letters = 'https://geogoroda.ru/bukva'
 urlCore = 'https://geogoroda.ru'
 TOWNS_FILE = 'data/towns.pickle'
 
@@ -48,7 +48,7 @@ class GeoParser:
 
 
 def main():
-    parser = GeoParser(url)
+    parser = GeoParser(url_letters)
     df = pd.DataFrame({'TownUrl': parser.getTownsUrls()})
 
     with open(TOWNS_FILE, 'wb') as f:
